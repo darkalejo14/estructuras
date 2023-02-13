@@ -1,0 +1,71 @@
+import java.util.Scanner;
+import java.util.Vector;
+
+public class vectores {
+
+    public static void main(String[] args) {
+        Scanner datos = new Scanner(System.in);
+
+        int elementos;
+        int numero_array;
+
+        System.out.println("Ingrese el tamaño del vector: ");
+
+        elementos= datos.nextInt();
+
+        int[] Vector = new int[elementos];
+
+        for (int i=0; i<elementos;i++){
+
+            System.out.println("Ingrese un número: ");
+            Vector[i]=datos.nextInt();
+
+        }
+
+        System.out.println("=====NUMEROS PRIMOS======");
+
+        for (int j=0; j<elementos;j++){
+            if(primos(Vector[j])){
+                System.out.println(Vector[j]);
+            }
+
+
+        }
+
+        System.out.println("=====NUMEROS PARES======");
+
+        for (int k=0; k<elementos;k++) {
+            if (pares(Vector[k])) {
+                System.out.println(Vector[k]);
+            }
+
+        }
+
+    }
+
+
+
+
+
+    ////////////////////////////////////////////////////////
+    public static boolean pares(int num){
+
+        return num % 2 == 0;
+    }
+
+    public static boolean primos(int num){
+
+        if(num==1){
+            return false;
+        }
+
+        for(int i=2; i<num;i++){
+
+            if (num%i==0){
+                return false;
+            }
+        }
+        return true;
+
+    }
+}
